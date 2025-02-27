@@ -1,0 +1,20 @@
+conexion(vancouver,edmonton,16).
+conexion(vancouver,calgary,13).
+conexion(calgary,edmonton,4).
+conexion(edmonton,saskatoon,12).
+conexion(calgary,regina,14).
+
+
+
+
+
+
+
+
+
+
+
+
+
+camino(X,Y) :- conexion(X,Y,_).
+camino(X,Y) :- conexion(X,W,_), conexion(W,Z,_), conexion(Z,Y,_).
