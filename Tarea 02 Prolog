@@ -17,4 +17,4 @@ conexion(calgary,regina,14).
 
 
 camino(X,Y) :- conexion(X,Y,_).
-camino(X,Y) :- conexion(X,W,_), conexion(W,Z,_), conexion(Z,Y,_).
+camino(X,Y) :- conexion(X,Z,_),camino(Z,Y).
