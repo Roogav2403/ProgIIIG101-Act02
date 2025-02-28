@@ -3,18 +3,12 @@ conexion(vancouver,calgary,13).
 conexion(calgary,edmonton,4).
 conexion(edmonton,saskatoon,12).
 conexion(calgary,regina,14).
+conexion(saskatoon,calgary,9).
+conexion(regina,saskatoon,7).
+conexion(regina,winnipeg,4).
+conexion(saskatoon,winnipeg,20).
 
-
-
-
-
-
-
-
-
-
-
-
-
+llegar(Inicio,Destino,Interm,Cost) :- conexion(Inicio,Interm,Cost1), conexion(Interm,Destino,Cost2), Cost is Cost1 + Cost2.
+tieneAristas(X) :- conexion(X,,).
 camino(X,Y) :- conexion(X,Y,_).
 camino(X,Y) :- conexion(X,Z,_),camino(Z,Y).
